@@ -767,6 +767,14 @@ body {
 }
 
 @media (max-width: 400px) {
+    .album-grid {
+        overflow-x: auto; /* Horizontal scroll enabled */
+        scroll-snap-type: x mandatory;
+    }
+    .album-card {
+        flex: 0 0 100%;
+        scroll-snap-align: center;
+    }
     .video-grid {
         overflow-x: auto; /* Horizontal scroll enabled */
         scroll-snap-type: x mandatory;
