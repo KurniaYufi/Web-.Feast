@@ -767,6 +767,9 @@ body {
 }
 
 @media (max-width: 400px) {
+    .navbar {
+        padding: 5px 20px 0px 5px;
+    }
     .album-grid {
         overflow-x: auto; /* Horizontal scroll enabled */
         scroll-snap-type: x mandatory;
