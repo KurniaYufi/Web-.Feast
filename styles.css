@@ -776,6 +776,14 @@ body {
         flex: 0 0 100%;
         scroll-snap-align: center;
     }
+    .merch-grid {
+        overflow-x: auto; /* Horizontal scroll enabled */
+        scroll-snap-type: x mandatory;
+    }
+    .merch-card {
+        flex: 0 0 90%;
+        scroll-snap-align: center;
+    }
 }
 
 @media (max-width: 600px) {
@@ -794,7 +802,7 @@ body {
         scroll-snap-type: x mandatory;
     }
     .merch-card {
-        flex: 0 0 110%;
+        flex: 0 0 100%;
         scroll-snap-align: center;
     }
 
