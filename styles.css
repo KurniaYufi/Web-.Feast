@@ -1,0 +1,804 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'poppins', sans-serif;
+}
+
+
+.no-scroll {
+    overflow: hidden; 
+}
+
+/* Hero Section (Header) */
+.hero-section {
+    background-image:url('images/Hero.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 100vh;
+}
+
+.menu{
+    display: none;
+}
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    background: transparent;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo img{
+    width: 150px;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li{
+    display: inline-block;
+    padding: 2vw;
+}
+
+.nav-links li a{
+    transition: all 0.3s ease 0s;
+    color: #FDFDFD;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.nav-links li a:hover{
+    color: #d10904;
+}
+
+.abt-button {
+    background-color: #d10904;
+    text-decoration: none;
+    color: #FDFDFD;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 800;
+    border-radius:10px ;
+    border: none;
+    padding: 10px 40px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+
+.abt-button:hover{
+    background-color: #FDFDFD;
+    color: #d10904;
+}
+
+ /* Hamburger Menu (Checkbox) */
+.navbar .menu-toggle {
+    display: none;
+}
+
+.navbar .hamburger {
+    color: #FDFDFD;
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* About Us */
+.about-us {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    background-color: #FDFDFD;
+    background-image: url('images/Texture.png');
+    flex-wrap: nowrap;
+}
+
+/* About Image */
+.about-us img {
+    max-width: 100%;
+    width: 550px; 
+    flex-shrink: 0;
+    margin-right: 40px;
+}
+
+/* About Content */
+.about-content {
+    display: flex;
+    flex-direction: column; 
+    padding: 0 20px;
+}
+
+.about-content h2 {
+    font-size: 56px;
+    color: #d10904;
+    padding: 15px 0;
+    font-family: 'bebas neue', sans-serif;
+}
+
+.about-content p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    margin-bottom: 20px;
+    overflow-wrap: break-word; 
+}
+
+.about-content button {
+    font-family: 'poppins', sans-serif;
+    font-size: 18px;
+    background-color: #d10904;
+    width: 300px;
+    color: #FDFDFD;
+    border: none;
+    padding: 10px 40px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+
+.about-content button:hover {
+    background-color: #0c0c0c;
+    color: #FDFDFD;
+}
+
+
+/*about us small screen*/
+@media (max-width: 1125px) {
+    .about-us {
+        padding: 50px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-us img {
+        margin: 0 0 20px 0;
+        width: 100%;
+        max-width: 500px; /* Limit width on smaller screens */
+    }
+
+    .about-content {
+        padding: 0 15px;
+        max-width: 800px;
+        align-items: center;
+    }
+
+    .about-content h2 {
+        font-size: 42px;
+        text-align: center;
+        font-family: 'Bebas neue', sans-serif;
+    }
+
+    .about-content p {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .about-content button {
+        justify-content: center;
+    }
+}
+/*hero section small screen*/
+@media (max-width: 865px) {
+    .nav-links, .abt-button {
+      display: none;
+    }
+
+    .navbar .hamburger {
+      display: flex;
+      z-index: 1100;
+      cursor: pointer;
+    }
+
+    /* Style for the logo within the fullscreen menu */
+    .menu-logo {
+        display: none; 
+    }
+
+    .menu-toggle:checked ~ .menu .menu-logo{
+        display: block; 
+    }
+
+    .menu-logo img {
+        width: 170px;
+    }
+
+    .menu-toggle:checked ~ .hero-section.navbar.logo{
+        display: none;
+    }
+
+    /* Fullscreen Menu for small screens */
+    .menu {
+      display: none; /* Initially hidden */
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(18, 18, 18, 0.8);
+      backdrop-filter: blur(10px);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      z-index: 1000;
+    }
+  
+    /* Show menu when checkbox is checked */
+    .menu-toggle:checked ~ .menu {
+        display: flex;
+        justify-items: center;
+    }
+
+    .menu li {
+        display: grid;
+        padding: 1rem 0;
+        justify-items: center;
+    }
+
+    .menu li a {
+        transition: all 0.3s ease 0s;
+        color: #FDFDFD;
+        font-size: 18px;
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .menu li a:hover {
+        color: #d10904;
+    }
+  
+    .menu .abt-button2 {
+        background-color: #d10904;
+        color: #FDFDFD;
+        font-size: 18px;
+        text-decoration: none;
+        font-weight: 800;
+        border-radius:10px ;
+        border: none;
+        padding: 10px 40px;
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+    }
+
+    .menu .abt-button2:hover{
+        background-color: #FDFDFD;
+        color: #d10904;
+    }
+}
+
+/* =========================Album Section=========================== */
+.albums {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 50px 50px 50px;
+    background-color: #FDFDFD;
+    background-image: url('images/Texture.png');
+}
+
+/* Title */
+.albums h2 {
+    color: #d10904;
+    font-size: 42px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-family: 'bebas neue', sans-serif;
+}
+
+/* Album Container */
+.album-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px 20px 50px 20px;
+    overflow: hidden; /* Prevents overflow */
+    scroll-behavior: smooth; /* Smooth scroll */
+}
+
+/* Album Card */
+.album-card {
+    background-color: #141418;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    width: 250px;
+    text-align: center;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.album-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.album-card p {
+    font-size: 24px;
+    color: #FDFDFD;
+    margin: 15px 15px;
+    font-weight: 700;
+    font-family: 'bebas neue', sans-serif;
+}
+
+/* Button for All Releases */
+.albums button {
+    font-family: 'poppins', sans-serif;
+    font-size: 18px;
+    background-color: #d10904;
+    width: 220px;
+    color: #FDFDFD;
+    border: none;
+    padding: 10px 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease 0s;
+}
+
+.albums button:hover{
+    background-color: #141418;
+    color: #fdfdfd;
+}
+
+.spotify-logo {
+    width: 45px; /* Adjust size as needed */
+    height: auto;
+    margin-top: 5px; /* Space between text and logo */
+}
+
+/*=============VIDEOS====================*/
+.videos {
+    padding: 50px;
+    background-image: url("images/Texture.png");
+    background-color: #0c0c0c;
+    text-align: center;
+}
+
+/* Video Grid for Horizontal Scrolling */
+.video-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 50px 0; /* Adjust padding to avoid cutoffs */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+.video-card {
+    display: flex;
+    flex-shrink: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width:500px; /* Set minimum width for each card */
+    flex-shrink: 0; /* Prevent shrinking */
+    border-radius: 10px;
+}
+
+.videos h2 {
+    color: #FDFDFD;
+    font-size: 56px;
+    font-weight: 600;
+    font-family: 'bebas neue', sans-serif;
+}
+
+.video-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.video-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.video-btn {
+    font-family: 'poppins', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    background-color: #d10904;
+    color: #FDFDFD;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.video-btn:hover {
+    background-color: #FDFDFD;
+    color: #d10904;
+}
+
+/* ================Merch Section===================== */
+.merch {
+    padding: 50px;
+    background-color: #FDFDFD;
+    background-image: url('images/Texture.png');
+    text-align: center;
+}
+
+/* Title */
+.merch h2 {
+    color: #141418;
+    font-size: 56px;
+    font-weight: 700;
+    font-family: 'bebas neue', sans-serif;
+}
+
+/* Merch Container */
+.merch-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    max-width: 1200px; /* Limit the width on larger screens */
+    width: 100%; /* Take full width */
+    padding: 50px 0; /* Adjust padding to avoid cutoffs */
+    overflow: hidden; /* Prevents overflow */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    margin: 0 auto; /* Center the grid horizontally */
+}
+
+/* Merch Card */
+.merch-card {
+    background-color: #fdfdfd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    max-width: 350px;
+    text-align: center;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.merch-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.merch-card h1 {
+    font-size: 32px;
+    color: #141414;
+    margin: 10px 15px;
+    font-weight: 700;
+    font-family: 'bebas neue', sans-serif;
+}
+
+.merch-card p {
+    font-size: 18px;
+    color: #141418;
+    margin: 10px 15px 20px 15px;
+    font-family: 'poppins', sans-serif;
+}
+
+/* Button for Merch */
+.merch-card button {
+    font-family: 'poppins', sans-serif;
+    font-size: 18px;
+    background-color: #d10904;
+    width: 180px;
+    color: #FDFDFD;
+    border: none;
+    padding: 10px 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease 0s;
+}
+
+.merch-card button:hover {
+    background-color: #0c0c0c;
+    color: #fdfdfd;
+}
+
+/*================photos section*/
+.photos {
+    background-color: #0c0c0c;
+    text-align: center;
+    padding: 30px 0;
+    background-image: url('images/Texture.png');
+}
+
+.photos-logo img {
+    max-width: 250px; /* Adjust logo size */
+}
+
+.photos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.photos-grid img {
+    width: calc(100% / 6); /* Initially, show all images in a single row */
+    height: auto;
+}
+
+.photos button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    background-color: #d10904;
+    width: 180px;
+    color: #FDFDFD;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin-top: 40px;
+}
+
+.photos button:hover {
+    background-color: #FDFDFD;
+    color: #d10904;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .photos-grid img {
+        width: calc(100% / 3); /* 3 columns */
+    }
+}
+
+@media (max-width: 800px) {
+    .photos-grid img {
+        width: calc(100% / 2); /* 2 columns */
+    }
+}
+
+@media (max-width: 500px) {
+    .photos-grid img {
+        width: 100%; /* 1 column */
+    }
+}
+
+/*====================footer====================*/
+.footer {
+    background-color: #0c0c0c;
+    color: #FDFDFD;
+    padding: 20px 10%;
+    font-family: 'Poppins', sans-serif;
+    background-image: url('images/Texture.png');
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+.footer-col {
+    display: flex;
+    align-items: center; /* Center vertically within the column */
+    gap: 30px; /* Space between text and icons */
+    justify-content: center; /* Center the text and logos horizontally */
+}
+
+.footer-col h3{
+    font-family: 'bebas neue', sans-serif;
+    font-size: 36px;
+}
+
+
+.social-logos, .music-logos {
+    display: flex;
+    gap: 15px;
+}
+
+.social-logo, .music-logo {
+    width: 30px;
+    height: auto;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-around; /* Center align the content horizontally */
+    padding-top: 20px;
+    color: #FDFDFD;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-bottom p {
+    color: #FDFDFD;
+    text-decoration: none;
+    margin: 0;
+    font-family: 'bebas neue', sans-serif;
+    font-size: 24px;
+}
+
+@media screen and (max-width: 700px) {
+    .footer-top, .footer-bottom {
+        flex-direction: column; /* Stack elements vertically */
+        gap: 10px; /* Reduce gap for stacked layout */
+        align-items: center; /* Center-align items */
+        text-align: center; /* Center-align text */
+    }
+}
+
+/* =======================responsifnes============================= */
+@media screen and (min-width: 400px) {
+    .nav-btn {
+        display: block; /* Show scroll buttons */
+    }
+    .album-grid {
+        overflow-x: auto; /* Horizontal scroll enabled */
+        scroll-snap-type: x mandatory;
+    }
+    .album-card {
+        flex: 0 0 100%;
+        scroll-snap-align: center;
+    }
+    .albums h2{
+        font-size: 56px;
+    }
+    .video-grid {
+        overflow-x: auto; /* Horizontal scroll enabled */
+        scroll-snap-type: x mandatory;
+    }
+    
+    .video-card {
+        flex: 0 0 100%;
+        scroll-snap-align: center;
+    }
+    .videos h2{
+        color: #FDFDFD;
+        font-size: 28px;
+        font-weight: 600;
+        font-family: 'bebas neue', sans-serif;
+    }
+}
+
+@media (min-width: 600px) {
+    .album-grid {
+        overflow-x: auto; /* Horizontal scroll enabled */
+        scroll-snap-type: x mandatory;
+    }
+    .album-card {
+        flex: 0 0 48%;
+        scroll-snap-align: center;
+    }
+    .video-grid {
+        overflow-x: auto; /* Horizontal scroll enabled */
+        scroll-snap-type: x mandatory;
+    }
+    .video-card {
+        flex: 0 0 50%;
+        scroll-snap-align: center;
+    }
+}
+
+@media (max-width: 900px) {
+    .merch-grid {
+        overflow-x: auto; /* Horizontal scroll enabled */
+        scroll-snap-type: x mandatory;
+    }
+    .merch-card {
+        flex: 0 0 55%;
+        scroll-snap-align: center;
+    }
+}
+
+@media (min-width: 900px) {
+    .album-grid {
+        overflow-x: auto; /* Horizontal scroll enabled */
+        scroll-snap-type: x mandatory;
+    }
+    .album-card {
+        flex: 0 0 31.5%;
+        scroll-snap-align: center;
+    }
+}
+
+@media (min-width: 1200px) {
+    .album-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 columns */
+        gap: 30px;
+        overflow: visible; /* No scroll on desktop */
+    }
+    .album-card {
+        flex: initial; /* Reset flex settings for desktop */
+        width: 100%; /* Adjust card width */
+    }
+    .albums h2 {
+        font-size: 56px;
+    }
+    .album-card p{
+        font-size: 24px;
+        margin: 15px 15px;
+    }
+    .video-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Tampilkan 3 kolom */
+        gap: 30px;
+        justify-content: center; /* Memusatkan grid secara horizontal */
+    }
+    .video-card {
+        width: 100%; /* Membuat setiap kartu memenuhi kolom */
+        max-width: 500px; /* Batas lebar maksimal setiap kartu untuk konsistensi */
+        height: auto; /* Menjaga proporsi gambar */
+    }
+    .videos h2{
+        font-size: 42px;
+        font-family: 'bebas neue', sans-serif;
+    }
+    .merch-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 4 columns */
+        gap: 50px;
+        overflow: visible; /* No scroll on desktop */
+        justify-content: center;
+    }
+    .merch-card {
+        flex: initial; /* Reset flex settings for desktop */
+        width: 100%; /* Adjust card width */
+    }
+}
+
+@media (max-width: 400px) {
+    .video-grid {
+        overflow-x: auto; /* Horizontal scroll enabled */
+        scroll-snap-type: x mandatory;
+    }
+    
+    .video-card {
+        flex: 0 0 100%;
+        scroll-snap-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .video-buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 15px; /* Adjust gap between buttons */
+        align-items: center; /* Center align the buttons */
+    }
+
+    .video-btn {
+        width: 220px; 
+        flex-shrink: 1;/* Set button width */
+    }
+    .merch-grid {
+        overflow-x: auto; /* Horizontal scroll enabled */
+        scroll-snap-type: x mandatory;
+    }
+    .merch-card {
+        flex: 0 0 110%;
+        scroll-snap-align: center;
+    }
+
+}
+
+
+
